@@ -80,7 +80,7 @@
     padding-right: 20px;
   }
   .footer .content {
-    flex-wrap: wrap;
+    flex-direction: column;
     width: 100%;
     gap: 0;
   }
