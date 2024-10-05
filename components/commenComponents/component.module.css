@@ -1,0 +1,94 @@
+.leftContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 0;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.rightContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: 100px 0;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.imageContainer {
+  flex: 1;
+}
+
+.imgWrapper {
+  width: fit-content;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.imageContainer img {
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.imageContainer img:hover {
+  transform: scale(1.1);
+}
+
+.rightContainer .imgWrapper {
+  margin-left: auto;
+}
+
+.leftContainer .imgWrapper {
+  margin-right: auto;
+}
+
+.content {
+  flex: 1;
+}
+
+.content p {
+  line-height: 1.6;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.content a {
+  background-color: rgb(214, 148, 27);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1199px) {
+  .leftContainer,
+  .rightContainer {
+    flex-direction: column; /* Stack elements vertically on small screens */
+    gap: 30px;
+    align-items: center; /* Align items to the start */
+    padding: 50px 0; /* Reduce padding */
+    border-top: 1px solid #ddd;
+  }
+
+  .imageContainer {
+    margin-bottom: 20px; /* Add space between image and content */
+  }
+
+  .content {
+    flex: none; /* Prevent flex grow on small screens */
+    text-align: center; /* Center content */
+  }
+
+  .content p {
+    font-size: 18px; /* Smaller font size for paragraphs */
+  }
+}
+
+@media (max-width: 480px) {
+  .content p {
+    font-size: 16px; /* Adjust paragraph font size for very small screens */
+  }
+
+  .content a {
+    padding: 10px; /* Increase padding on buttons for touch targets */
+  }
+}

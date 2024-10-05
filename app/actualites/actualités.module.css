@@ -1,0 +1,12 @@
+.actualite h2 {
+  margin-top: 160px;
+  text-align: center;
+  color: orange;
+  font-size: 25px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.actualite .facebook {
+  width: fit-content;
+  margin: 50px auto;
+}

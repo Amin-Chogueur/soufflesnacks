@@ -1,0 +1,59 @@
+.quality {
+  min-height: 100vh;
+  width: 85%;
+  margin: auto;
+}
+.imageContainer img {
+  margin: 60px auto;
+}
+
+.content {
+  width: 800px;
+  margin: auto;
+}
+.content h2 {
+  color: orange;
+  font-size: 30px;
+}
+.content p {
+  line-height: 1.6;
+  font-size: 18px;
+  margin: 40px 0;
+  border-left: 3px solid orange;
+  padding-left: 10px;
+}
+
+@media (max-width: 992px) {
+  .quality {
+    width: 90%; /* Increase width for smaller screens */
+  }
+
+  .content {
+    width: 100%; /* Allow content to take full width on smaller screens */
+    padding: 0 20px; /* Add padding for spacing */
+  }
+
+  .content h2 {
+    font-size: 26px; /* Smaller font size for headings */
+  }
+
+  .content p {
+    font-size: 16px; /* Smaller font size for paragraphs */
+    margin: 30px 0; /* Adjust margins */
+  }
+}
+
+@media (max-width: 480px) {
+  .content h2 {
+    font-size: 22px; /* Further reduce font size for very small screens */
+  }
+
+  .content p {
+    font-size: 14px; /* Adjust paragraph font size */
+    margin: 20px 0; /* Adjust margins */
+  }
+
+  .imageContainer img {
+    margin: 40px auto; /* Reduce margin for smaller screens */
+  }
+}
