@@ -107,7 +107,7 @@ function Footer() {
       <div className={styles.copyRight}>
         Copyright © 2024{" "}
         <strong>
-          <Link href={"/"}>SARL SOUFFLE PLASTE</Link>
+          <Link href={"/"}>SARL SOUFFLESNACKS</Link>
         </strong>
         . All rights reserved.
       </div>

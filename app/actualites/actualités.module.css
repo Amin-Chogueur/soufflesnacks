@@ -10,3 +10,14 @@
   width: fit-content;
   margin: 50px auto;
 }
+.facebookImage {
+  display: none;
+}
+@media (max-width: 768px) {
+  .facebookSite {
+    display: none;
+  }
+  .facebookImage {
+    display: block;
+  }
+}

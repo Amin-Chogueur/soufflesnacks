@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./gammes.module.css";
 import { productsData } from "@/db/db";
 import { useState } from "react";
+
 function Gammes() {
   const [data, setData] = useState("all");
   function handleClick(type) {

@@ -1,7 +1,8 @@
 "use client";
 import styles from "./actualités.module.css";
 import FacebookPage from "@/components/facebook/FacebookPage";
-
+import Image from "next/image";
+import Link from "next/link";
 function Actualités() {
   function refrechPage() {
     window.location.reload();
@@ -13,7 +14,23 @@ function Actualités() {
         Cliquez et Suivez-nous sur Facebook pour voir les derniers événements !
       </h2>
       <div className={styles.facebook}>
-        <FacebookPage />
+        <div className={styles.facebookSite}>
+          <FacebookPage />
+        </div>
+        <div className={styles.facebookImage}>
+          <Link
+            href="https://www.facebook.com/CroxMaxChips?ref=embed_page"
+            target="_blank"
+            passHref
+          >
+            <Image
+              src="/facebook.png"
+              alt="facebook"
+              width={340}
+              height={500}
+            />
+          </Link>
+        </div>
       </div>
     </div>
   );

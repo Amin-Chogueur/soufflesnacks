@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import styles from "./contact.module.css"; // Adjust the path to your CSS module
+import styles from "./contact.module.css";
 
 function ContactForm() {
   const [formData, setFormData] = useState({
@@ -32,7 +32,7 @@ function ContactForm() {
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit} className={styles.contactForm}>
-        <h2>Contact Us</h2>
+        <h2>CONTACTEZ-NOUS</h2>
         <div>
           <label htmlFor="name">Nom:</label>
           <input
@@ -45,7 +45,7 @@ function ContactForm() {
           />
         </div>
         <div>
-          <label htmlFor="email">mail:</label>
+          <label htmlFor="email">Mail:</label>
           <input
             type="email"
             id="email"

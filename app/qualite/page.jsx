@@ -1,6 +1,13 @@
 import Image from "next/image";
 import styles from "./qualité.module.css";
 
+export const metadata = {
+  title: "La Qualite chez Crox ",
+  description: `La qualité de nos chips est contrôlée en interne à chaque étape de la
+  production mais aussi par un laboratoire externe qui vient
+  régulièrement prélever des échantillons de manière aléatoire.
+`,
+};
 function Qualite() {
   return (
     <div className={styles.quality}>
