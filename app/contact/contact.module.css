@@ -53,6 +53,7 @@
   color: black; /* White text color */
   font-size: 16px;
   cursor: pointer;
+  font-weight: 600;
   transition: background-color 0.3s ease;
 }
 

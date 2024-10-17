@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
 import styles from "./contact.module.css";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
@@ -17,16 +18,33 @@ function ContactForm() {
       [name]: value,
     });
   };
+  const [status, setStatus] = useState("Envoyer");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-      phone: "",
-    });
+    setStatus("On Envoie...");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await res.json();
+      setStatus(result.status);
+      toast.success("Votre message a été envoyé");
+    } catch (error) {
+      setStatus("Submission failed");
+      toast.error("Error sending email!");
+    } finally {
+      setStatus("Envoyer");
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+        phone: "",
+      });
+    }
   };
 
   return (
@@ -76,8 +94,9 @@ function ContactForm() {
             required
           />
         </div>
-        <button type="submit">Envoyer</button>
+        <button type="submit">{status}</button>
       </form>
+      <ToastContainer />
     </div>
   );
 }
