@@ -40,10 +40,9 @@ const data = [
 export default function About() {
   return (
     <div className={styles.about}>
-      <Component data={data[0]} />
-      <Component data={data[1]} />
-      <Component data={data[2]} />
-      <Component data={data[3]} />
+      {data.map((item, i) => (
+        <Component key={i} data={item} />
+      ))}
     </div>
   );
 }

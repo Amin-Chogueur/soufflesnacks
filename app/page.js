@@ -1,7 +1,10 @@
+"use client";
 import Image from "next/image";
 import styles from "./home.module.css";
 import Hero from "@/components/hero/Hero";
 import Component from "@/components/commenComponents/Component";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 const data = [
   {
     id: 1,
@@ -26,12 +29,14 @@ const data = [
 ];
 
 export default function Home() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
-    <main className={styles.home}>
+    <main ref={ref} className={styles.home}>
       <Hero />
-      <Component data={data[0]} />
-      <Component data={data[1]} />
-      <p></p>
+      {data.map((item, i) => (
+        <Component key={i} data={item} />
+      ))}
     </main>
   );
 }
